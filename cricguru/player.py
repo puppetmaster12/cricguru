@@ -1,4 +1,4 @@
-import scraper.Scraper
+import Scraper
 
 
 class Player:
