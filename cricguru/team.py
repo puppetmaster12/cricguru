@@ -1,11 +1,12 @@
-from scraper import Scraper
+from .scraper import Scraper
+
 
 # Classes
 # Test = 1, ODI = 2, T20 = 3, All = 11
 class Team:
     def __init__(self):
-        self.query = {'type': 'team', 'template': 'results'}
-        self.search_type = 'team'
+        self.query = {"type": "team", "template": "results"}
+        self.search_type = "team"
 
     # OVERALL FIGURES
     def get_overall(self, query_params, limit=100):
@@ -18,7 +19,7 @@ class Team:
     # INNINGS BY INNINGS
     def get_inns(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'innings'
+        self.query["view"] = "innings"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -26,7 +27,7 @@ class Team:
     # MATCH TOTALS
     def get_matchtot(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'match'
+        self.query["view"] = "match"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -34,23 +35,23 @@ class Team:
     # MATCH RESULTS
     def get_matchres(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'results'
+        self.query["view"] = "results"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
 
     # SERIES AVERAGE
-    def get_series_avg(self, query_params,limit=100):
+    def get_series_avg(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'series'
+        self.query["view"] = "series"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
 
     # GROUND AVERAGE
-    def get_ground_avg(self, query_params,limit=100):
+    def get_ground_avg(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'ground'
+        self.query["view"] = "ground"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -58,7 +59,7 @@ class Team:
     # RESULTS BY HOST COUNTRY
     def get_by_host(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'host'
+        self.query["view"] = "host"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -66,7 +67,7 @@ class Team:
     # RESULTS BY OPPOSITION
     def get_by_opp(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'opposition'
+        self.query["view"] = "opposition"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -74,7 +75,7 @@ class Team:
     # BY YEAR
     def get_by_year(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'year'
+        self.query["view"] = "year"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -82,7 +83,7 @@ class Team:
     # BY SEASON
     def get_by_season(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'season'
+        self.query["view"] = "season"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -90,7 +91,7 @@ class Team:
     # OVERALL EXTRAS
     def get_overall_extras(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'extras'
+        self.query["view"] = "extras"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -98,7 +99,7 @@ class Team:
     # EXTRAS BY INNINGS
     def get_extras_inn(self, query_params, limit=100):
         self.query.update(query_params)
-        self.query['view'] = 'extras_innings'
+        self.query["view"] = "extras_innings"
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
