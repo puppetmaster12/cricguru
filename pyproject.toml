@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cricguru"
-version = "0.3.0"
+version = "0.4.0"
 description = ""
 authors = ["Pavithran <pavithranthilakanathan@gmai.com>"]
 readme = "README.md"
