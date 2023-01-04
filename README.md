@@ -27,7 +27,7 @@ from cricguru import team
 
 team = team.Team()
 query_params = {"template": "results"}
-cric_data = team.get_overall(query_params)
+cric_data = team.overall(query_params)
 
 #Returns a pandas dataframe
 cric_data.head()
