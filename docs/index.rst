@@ -7,10 +7,12 @@ Welcome to Cricguru's documentation!
 ====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Contents:
 
+   overview
    install
+   usage
    cricguru
 
 Indices and tables

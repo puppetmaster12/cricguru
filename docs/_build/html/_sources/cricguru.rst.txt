@@ -1,8 +1,8 @@
-cricguru package
-================
-
 API
-----
+===
+
+.. API
+.. ----
 
 cricguru.player
 ---------------

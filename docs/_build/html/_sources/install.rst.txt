@@ -1,5 +1,5 @@
 Installation
-------------
+============
 
 
 At the command line:
