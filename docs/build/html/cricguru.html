@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cricguru package &mdash; Cricguru 1.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Cricguru’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Cricguru
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">cricguru package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cricguru.player">cricguru.player</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cricguru.player.Player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.player_id"><code class="docutils literal notranslate"><span class="pre">Player.player_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.career_summary"><code class="docutils literal notranslate"><span class="pre">Player.career_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.inn_list"><code class="docutils literal notranslate"><span class="pre">Player.inn_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.match_list"><code class="docutils literal notranslate"><span class="pre">Player.match_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.cumulative_avg"><code class="docutils literal notranslate"><span class="pre">Player.cumulative_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.reverse_cumulative"><code class="docutils literal notranslate"><span class="pre">Player.reverse_cumulative()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.series_avg"><code class="docutils literal notranslate"><span class="pre">Player.series_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.ground_avg"><code class="docutils literal notranslate"><span class="pre">Player.ground_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.match_results"><code class="docutils literal notranslate"><span class="pre">Player.match_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.match_awards"><code class="docutils literal notranslate"><span class="pre">Player.match_awards()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.series_awards"><code class="docutils literal notranslate"><span class="pre">Player.series_awards()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.partnership_summary"><code class="docutils literal notranslate"><span class="pre">Player.partnership_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.partnership_list"><code class="docutils literal notranslate"><span class="pre">Player.partnership_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.dismissal_summary"><code class="docutils literal notranslate"><span class="pre">Player.dismissal_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.bowler_summary"><code class="docutils literal notranslate"><span class="pre">Player.bowler_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.fielder_summary"><code class="docutils literal notranslate"><span class="pre">Player.fielder_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.dismissal_list"><code class="docutils literal notranslate"><span class="pre">Player.dismissal_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.dism_summary"><code class="docutils literal notranslate"><span class="pre">Player.dism_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.batsman_summary"><code class="docutils literal notranslate"><span class="pre">Player.batsman_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Player.fielder_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.player.Player.wickets_list"><code class="docutils literal notranslate"><span class="pre">Player.wickets_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Player.batsman_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Player.bowler_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">Player.career_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">Player.cumulative_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">Player.dism_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">Player.dismissal_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">Player.dismissal_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">Player.fielder_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">Player.ground_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">Player.inn_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">Player.match_awards()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">Player.match_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">Player.match_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">Player.partnership_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">Player.partnership_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">Player.reverse_cumulative()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">Player.series_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">Player.series_awards()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">Player.wickets_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cricguru.scraper">cricguru.scraper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cricguru.scraper.Scraper"><code class="docutils literal notranslate"><span class="pre">Scraper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.scraper.Scraper.getPlayerData"><code class="docutils literal notranslate"><span class="pre">Scraper.getPlayerData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.scraper.Scraper.getTeamData"><code class="docutils literal notranslate"><span class="pre">Scraper.getTeamData()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cricguru.team">cricguru.team</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cricguru.team.Team"><code class="docutils literal notranslate"><span class="pre">Team</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.overall"><code class="docutils literal notranslate"><span class="pre">Team.overall()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.inn_by_inn"><code class="docutils literal notranslate"><span class="pre">Team.inn_by_inn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.matchtot"><code class="docutils literal notranslate"><span class="pre">Team.matchtot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.matchres"><code class="docutils literal notranslate"><span class="pre">Team.matchres()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.series_avg"><code class="docutils literal notranslate"><span class="pre">Team.series_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.ground_avg"><code class="docutils literal notranslate"><span class="pre">Team.ground_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.by_host"><code class="docutils literal notranslate"><span class="pre">Team.by_host()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.by_opp"><code class="docutils literal notranslate"><span class="pre">Team.by_opp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.by_year"><code class="docutils literal notranslate"><span class="pre">Team.by_year()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.by_season"><code class="docutils literal notranslate"><span class="pre">Team.by_season()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.overall_extras"><code class="docutils literal notranslate"><span class="pre">Team.overall_extras()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cricguru.team.Team.extras_inn"><code class="docutils literal notranslate"><span class="pre">Team.extras_inn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">Team.by_host()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">Team.by_opp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">Team.by_season()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">Team.by_year()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">Team.extras_inn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">Team.ground_avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">Team.inn_by_inn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">Team.matchres()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">Team.matchtot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">Team.overall()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">Team.overall_extras()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">Team.series_avg()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cricguru">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cricguru</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">cricguru package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cricguru.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cricguru-package">
+<h1>cricguru package<a class="headerlink" href="#cricguru-package" title="Permalink to this heading"></a></h1>
+<section id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-cricguru.player">
+<span id="cricguru-player"></span><h2>cricguru.player<a class="headerlink" href="#module-cricguru.player" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cricguru.player.Player">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cricguru.player.</span></span><span class="sig-name descname"><span class="pre">Player</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Player class contains all the functions that extract data related to players</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cricguru.player.Player.player_id">
+<span class="sig-name descname"><span class="pre">player_id</span></span><a class="headerlink" href="#cricguru.player.Player.player_id" title="Permalink to this definition"></a></dt>
+<dd><p>ID of the player obtained from Cricinfo</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.career_summary">
+<span class="sig-name descname"><span class="pre">career_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.career_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.career_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the career summary stats of the player.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.inn_list">
+<span class="sig-name descname"><span class="pre">inn_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.inn_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.inn_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of innings played by the player and stats.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.match_list">
+<span class="sig-name descname"><span class="pre">match_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.match_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.match_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of matches played by the player and stats.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.cumulative_avg">
+<span class="sig-name descname"><span class="pre">cumulative_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.cumulative_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.cumulative_avg" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the cumulative average of all matches played.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.reverse_cumulative">
+<span class="sig-name descname"><span class="pre">reverse_cumulative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.reverse_cumulative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.reverse_cumulative" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the reverse cumulative average of all matches played.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.series_avg">
+<span class="sig-name descname"><span class="pre">series_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.series_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.series_avg" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and bowling stats for each series.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.ground_avg">
+<span class="sig-name descname"><span class="pre">ground_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.ground_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.ground_avg" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and bowling stats in each ground played.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.match_results">
+<span class="sig-name descname"><span class="pre">match_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.match_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.match_results" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the results of all matches played.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.match_awards">
+<span class="sig-name descname"><span class="pre">match_awards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.match_awards"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.match_awards" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the awards earned in all matches.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.series_awards">
+<span class="sig-name descname"><span class="pre">series_awards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.series_awards"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.series_awards" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the awards earned in all series.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.partnership_summary">
+<span class="sig-name descname"><span class="pre">partnership_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.partnership_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.partnership_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary stats of all partnerships.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.partnership_list">
+<span class="sig-name descname"><span class="pre">partnership_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.partnership_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.partnership_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of all partnerships and stats.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.dismissal_summary">
+<span class="sig-name descname"><span class="pre">dismissal_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.dismissal_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.dismissal_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary of all batting dismissals under various groupings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.bowler_summary">
+<span class="sig-name descname"><span class="pre">bowler_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.bowler_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.bowler_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary of stats against all bowlers faced.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.fielder_summary">
+<span class="sig-name descname"><span class="pre">fielder_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.fielder_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.fielder_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary of stats and dismissals against fielding players.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.dismissal_list">
+<span class="sig-name descname"><span class="pre">dismissal_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.dismissal_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.dismissal_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of all dismissals.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.dism_summary">
+<span class="sig-name descname"><span class="pre">dism_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.dism_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.dism_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary of all wickets by the player.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.batsman_summary">
+<span class="sig-name descname"><span class="pre">batsman_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.batsman_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.batsman_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary stats of all batters dismissed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">fielder_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.fielder_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary stats dismissals by fielders.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.player.Player.wickets_list">
+<span class="sig-name descname"><span class="pre">wickets_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.wickets_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.player.Player.wickets_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of all wickets taken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">batsman_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.batsman_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary stats of all batters dismissed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return bowling data will not work with batting parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">bowler_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.bowler_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary of stats against all bowlers faced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return batting data will not work with bowling parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">career_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.career_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the career summary stats of the player.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>player = player.Player(49764)
+query_params = {</p>
+<blockquote>
+<div><p>‘class’ : ‘1’,
+‘type’ : ‘allround’</p>
+</div></blockquote>
+<p>}</p>
+<p>cric_data = player.career_summary(query_params)
+print(cric_data.head())</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">cumulative_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.cumulative_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the cumulative average of all matches played.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">dism_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.dism_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary of all wickets by the player.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return bowling data will not work with batting parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">dismissal_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.dismissal_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of all dismissals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return batting data will not work with bowling parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">dismissal_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.dismissal_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id7" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary of all batting dismissals under various groupings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return batting data will not work with bowling parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">fielder_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.fielder_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id8" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary stats dismissals by fielders.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return bowling data will not work with batting parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">ground_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.ground_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id9" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and bowling stats in each ground played.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">inn_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.inn_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id10" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of innings played by the player and stats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">match_awards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.match_awards"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id11" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the awards earned in all matches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">match_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.match_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id12" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of matches played by the player and stats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">match_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.match_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id13" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the results of all matches played.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">partnership_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.partnership_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id14" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of all partnerships and stats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return batting data will not work with bowling parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">partnership_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.partnership_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id15" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the summary stats of all partnerships.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return batting data will not work with bowling parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">reverse_cumulative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.reverse_cumulative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id16" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the reverse cumulative average of all matches played.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">series_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.series_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id17" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and bowling stats for each series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">series_awards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.series_awards"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id18" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the awards earned in all series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-name descname"><span class="pre">wickets_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/player.html#Player.wickets_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id19" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of all wickets taken.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Functions that return bowling data will not work with batting parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cricguru.scraper">
+<span id="cricguru-scraper"></span><h2>cricguru.scraper<a class="headerlink" href="#module-cricguru.scraper" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cricguru.scraper.Scraper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cricguru.scraper.</span></span><span class="sig-name descname"><span class="pre">Scraper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/scraper.html#Scraper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.scraper.Scraper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.scraper.Scraper.getPlayerData">
+<span class="sig-name descname"><span class="pre">getPlayerData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/scraper.html#Scraper.getPlayerData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.scraper.Scraper.getPlayerData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.scraper.Scraper.getTeamData">
+<span class="sig-name descname"><span class="pre">getTeamData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/scraper.html#Scraper.getTeamData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.scraper.Scraper.getTeamData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cricguru.team">
+<span id="cricguru-team"></span><h2>cricguru.team<a class="headerlink" href="#module-cricguru.team" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cricguru.team.Team">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cricguru.team.</span></span><span class="sig-name descname"><span class="pre">Team</span></span><a class="reference internal" href="_modules/cricguru/team.html#Team"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Team class contains all the functions that extract overall and teams related data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.overall">
+<span class="sig-name descname"><span class="pre">overall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.overall"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.overall" title="Permalink to this definition"></a></dt>
+<dd><p>Returns overall figures for all matches played by each team.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.inn_by_inn">
+<span class="sig-name descname"><span class="pre">inn_by_inn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.inn_by_inn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.inn_by_inn" title="Permalink to this definition"></a></dt>
+<dd><p>Returns match results for each innings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.matchtot">
+<span class="sig-name descname"><span class="pre">matchtot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.matchtot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.matchtot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns total scores for each team by match.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.matchres">
+<span class="sig-name descname"><span class="pre">matchres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.matchres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.matchres" title="Permalink to this definition"></a></dt>
+<dd><p>Returns results of each match.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.series_avg">
+<span class="sig-name descname"><span class="pre">series_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.series_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.series_avg" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and stats for each series.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.ground_avg">
+<span class="sig-name descname"><span class="pre">ground_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.ground_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.ground_avg" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and stats based on ground played in.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.by_host">
+<span class="sig-name descname"><span class="pre">by_host</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_host"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.by_host" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team by host team.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.by_opp">
+<span class="sig-name descname"><span class="pre">by_opp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_opp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.by_opp" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team against each opposition team.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.by_year">
+<span class="sig-name descname"><span class="pre">by_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_year"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.by_year" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team by year.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.by_season">
+<span class="sig-name descname"><span class="pre">by_season</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_season"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.by_season" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team by season.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.overall_extras">
+<span class="sig-name descname"><span class="pre">overall_extras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.overall_extras"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.overall_extras" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall extras scored by each team and other stats related to extras.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cricguru.team.Team.extras_inn">
+<span class="sig-name descname"><span class="pre">extras_inn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.extras_inn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cricguru.team.Team.extras_inn" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the extras scored by innings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-name descname"><span class="pre">by_host</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_host"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id20" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team by host team.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-name descname"><span class="pre">by_opp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_opp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id21" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team against each opposition team.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">by_season</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_season"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id22" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team by season.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-name descname"><span class="pre">by_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.by_year"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id23" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall stats for each team by year.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-name descname"><span class="pre">extras_inn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.extras_inn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id24" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the extras scored by innings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-name descname"><span class="pre">ground_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.ground_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id25" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and stats based on ground played in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-name descname"><span class="pre">inn_by_inn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.inn_by_inn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id26" title="Permalink to this definition"></a></dt>
+<dd><p>Returns match results for each innings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-name descname"><span class="pre">matchres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.matchres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id27" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall results of each match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-name descname"><span class="pre">matchtot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.matchtot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id28" title="Permalink to this definition"></a></dt>
+<dd><p>Returns total scores for each team by match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-name descname"><span class="pre">overall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.overall"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id29" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall figures for all matches played by each team.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-name descname"><span class="pre">overall_extras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.overall_extras"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id30" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the overall extras scored by each team and other stats related to extras.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-name descname"><span class="pre">series_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cricguru/team.html#Team.series_avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id31" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the average scores and stats for each series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong><strong>)</strong> (<em>query_params</em><em> (</em><em>dict of</em>) – A dictionary containing all the query parameters.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The data limit for number of records returned. Default limit is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe containing the query results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cricguru">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cricguru" title="Permalink to this heading"></a></h2>
+<p>Cricguru</p>
+<p>This package contains functions for retrieving data from the Statsguru data query on ESPN Cricinfo. The main
+classes cover teams and players data. The results are returned as a Pandas dataframe in order to facilitate
+data analysis on cricket data.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Cricguru’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Pavithran Thilakanathan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cricguru.player &mdash; Cricguru 1.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Cricguru
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cricguru.html">cricguru package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Cricguru</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">cricguru.player</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for cricguru.player</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.scraper</span> <span class="kn">import</span> <span class="n">Scraper</span>
+
+
+<div class="viewcode-block" id="Player"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player">[docs]</a><span class="k">class</span> <span class="nc">Player</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Player class contains all the functions that extract data related to players</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Attributes</span>
+    <span class="c1"># ----------</span>
+    <span class="c1"># player_id : int</span>
+    <span class="c1">#     ID of the player obtained from Cricinfo</span>
+
+    <span class="c1"># Methods</span>
+    <span class="c1"># -------</span>
+    <span class="c1"># career_summary(query_params)</span>
+    <span class="c1">#     Returns the career summary stats of the player.</span>
+
+    <span class="c1"># inn_list(query_params)</span>
+    <span class="c1">#     Returns the list of innings played by the player and stats.</span>
+
+    <span class="c1"># match_list(query_params)</span>
+    <span class="c1">#     Returns the list of matches played by the player and stats.</span>
+
+    <span class="c1"># cumulative_avg(query_params)</span>
+    <span class="c1">#     Returns the cumulative average of all matches played.</span>
+
+    <span class="c1"># reverse_cumulative(query_params)</span>
+    <span class="c1">#     Returns the reverse cumulative average of all matches played.</span>
+
+    <span class="c1"># series_avg(query_params)</span>
+    <span class="c1">#     Returns the average scores and bowling stats for each series.</span>
+
+    <span class="c1"># ground_avg(query_params)</span>
+    <span class="c1">#     Returns the average scores and bowling stats in each ground played.</span>
+
+    <span class="c1"># match_results(query_params)</span>
+    <span class="c1">#     Returns the results of all matches played.</span>
+
+    <span class="c1"># match_awards(query_params)</span>
+    <span class="c1">#     Returns the awards earned in all matches.</span>
+
+    <span class="c1"># series_awards(query_params)</span>
+    <span class="c1">#     Returns the awards earned in all series.</span>
+
+    <span class="c1"># partnership_summary(query_params)</span>
+    <span class="c1">#     Returns the summary stats of all partnerships.</span>
+
+    <span class="c1"># partnership_list(query_params)</span>
+    <span class="c1">#     Returns the list of all partnerships and stats.</span>
+
+    <span class="c1"># dismissal_summary(query_params)</span>
+    <span class="c1">#     Returns the summary of all batting dismissals under various groupings.</span>
+
+    <span class="c1"># bowler_summary(query_params)</span>
+    <span class="c1">#     Returns the summary of stats against all bowlers faced.</span>
+
+    <span class="c1"># fielder_summary(query_params)</span>
+    <span class="c1">#     Returns the summary of stats and dismissals against fielding players.</span>
+
+    <span class="c1"># dismissal_list(query_params)</span>
+    <span class="c1">#     Returns the list of all dismissals.</span>
+
+    <span class="c1"># dism_summary(query_params)</span>
+    <span class="c1">#     Returns the summary of all wickets by the player.</span>
+
+    <span class="c1"># batsman_summary(query_params)</span>
+    <span class="c1">#     Returns the summary stats of all batters dismissed.</span>
+
+    <span class="c1"># fielder_summary(query_params)</span>
+    <span class="c1">#     Returns the summary stats dismissals by fielders.</span>
+
+    <span class="c1"># wickets_list(query_params)</span>
+    <span class="c1">#     Returns the list of all wickets taken.</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param player_id: The player id obtained from the Cricinfo website</span>
+<span class="sd">        :type player_id: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Default results parameter required by cricinfo in all queries</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;results&quot;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player_id</span> <span class="o">=</span> <span class="n">player_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cric_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="Player.career_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.career_summary">[docs]</a>    <span class="k">def</span> <span class="nf">career_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the career summary stats of the player.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cric_data : pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        -------</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            player = player.Player(49764)</span>
+<span class="sd">            query_params = {</span>
+<span class="sd">                &#39;class&#39; : &#39;1&#39;,</span>
+<span class="sd">                &#39;type&#39; : &#39;allround&#39;</span>
+<span class="sd">            }</span>
+
+<span class="sd">            cric_data = player.career_summary(query_params)</span>
+<span class="sd">            print(cric_data.head())</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Update default query dict with query_params dict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.inn_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.inn_list">[docs]</a>    <span class="k">def</span> <span class="nf">inn_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of innings played by the player and stats.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;innings&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.match_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_list">[docs]</a>    <span class="k">def</span> <span class="nf">match_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of matches played by the player and stats.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;match&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.cumulative_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.cumulative_avg">[docs]</a>    <span class="k">def</span> <span class="nf">cumulative_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the cumulative average of all matches played.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cumulative&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.reverse_cumulative"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.reverse_cumulative">[docs]</a>    <span class="k">def</span> <span class="nf">reverse_cumulative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the reverse cumulative average of all matches played.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;reverse_cumulative&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.series_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.series_avg">[docs]</a>    <span class="k">def</span> <span class="nf">series_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the average scores and bowling stats for each series.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;series&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.ground_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.ground_avg">[docs]</a>    <span class="k">def</span> <span class="nf">ground_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the average scores and bowling stats in each ground played.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ground&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.match_results"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_results">[docs]</a>    <span class="k">def</span> <span class="nf">match_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the results of all matches played.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;results&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.match_awards"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_awards">[docs]</a>    <span class="k">def</span> <span class="nf">match_awards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the awards earned in all matches.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;awards_match&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+<div class="viewcode-block" id="Player.series_awards"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.series_awards">[docs]</a>    <span class="k">def</span> <span class="nf">series_awards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the awards earned in all series.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;awards_series&quot;</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cric_data</span></div>
+
+    <span class="c1"># BATTING</span>
+<div class="viewcode-block" id="Player.partnership_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.partnership_summary">[docs]</a>    <span class="k">def</span> <span class="nf">partnership_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the summary stats of all partnerships.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return batting data will not work with bowling parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fow_summary&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Partnership summary is only available for batting data&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Player.partnership_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.partnership_list">[docs]</a>    <span class="k">def</span> <span class="nf">partnership_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of all partnerships and stats.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return batting data will not work with bowling parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fow_list&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Partnership list is only available for batting data&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Player.dismissal_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dismissal_summary">[docs]</a>    <span class="k">def</span> <span class="nf">dismissal_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the summary of all batting dismissals under various groupings.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return batting data will not work with bowling parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_summary&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Dismissal summary is only available for batting data&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Player.bowler_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.bowler_summary">[docs]</a>    <span class="k">def</span> <span class="nf">bowler_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the summary of stats against all bowlers faced.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return batting data will not work with bowling parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bowler_summary&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Bowler summary is only available for batting data&quot;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">fielder_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the summary of stats and dismissals against fielding players.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return batting data will not work with bowling parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fielder_summary&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Fielder summary is only available for batting data&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Player.dismissal_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dismissal_list">[docs]</a>    <span class="k">def</span> <span class="nf">dismissal_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of all dismissals.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return batting data will not work with bowling parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_list&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Dismissal list is only available for batting data&quot;</span><span class="p">)</span></div>
+
+    <span class="c1"># BOWLING</span>
+<div class="viewcode-block" id="Player.dism_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dism_summary">[docs]</a>    <span class="k">def</span> <span class="nf">dism_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the summary of all wickets by the player.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return bowling data will not work with batting parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_summary&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Dismissal summary is only available for bowling data&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Player.batsman_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.batsman_summary">[docs]</a>    <span class="k">def</span> <span class="nf">batsman_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the summary stats of all batters dismissed.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return bowling data will not work with batting parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;batsman_summary&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Batsman summary is only available for bowling data&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Player.fielder_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.fielder_summary">[docs]</a>    <span class="k">def</span> <span class="nf">fielder_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the summary stats dismissals by fielders.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return bowling data will not work with batting parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fielder_summary&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Fielder summary is only available for bowling data&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Player.wickets_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.wickets_list">[docs]</a>    <span class="k">def</span> <span class="nf">wickets_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of all wickets taken.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        Exception</span>
+<span class="sd">            Functions that return bowling data will not work with batting parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_list&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
+            <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Wickets list is only available for bowling data&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Pavithran Thilakanathan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

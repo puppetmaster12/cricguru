@@ -4,46 +4,45 @@ from .scraper import Scraper
 class Team:
     """
     The Team class contains all the functions that extract overall and teams related data.
-
-    Methods
-    -------
-    overall(query_params, limit=100)
-        Returns overall figures for all matches played by each team.
-
-    inn_by_inn(query_params, limit=100)
-        Returns match results for each innings.
-
-    matchtot(query_params, limit=100)
-        Returns total scores for each team by match.
-
-    matchres(query_params, limit=100)
-        Returns results of each match.
-
-    series_avg(query_params, limit=100)
-        Returns the average scores and stats for each series.
-
-    ground_avg(query_params, limit=100)
-        Returns the average scores and stats based on ground played in.
-
-    by_host(query_params, limit=100)
-        Returns the overall stats for each team by host team.
-
-    by_opp(query_params, limit=100)
-        Returns the overall stats for each team against each opposition team.
-
-    by_year(query_params, limit=100)
-        Returns the overall stats for each team by year.
-
-    by_season(query_params, limit=100)
-        Returns the overall stats for each team by season.
-
-    overall_extras(query_params, limit=100)
-        Returns the overall extras scored by each team and other stats related to extras.
-
-    extras_inn(query_params, limit=100)
-        Returns the extras scored by innings.
     """
 
+    # Methods
+    # -------
+    # overall(query_params, limit=100)
+    #     Returns overall figures for all matches played by each team.
+
+    # inn_by_inn(query_params, limit=100)
+    #     Returns match results for each innings.
+
+    # matchtot(query_params, limit=100)
+    #     Returns total scores for each team by match.
+
+    # matchres(query_params, limit=100)
+    #     Returns results of each match.
+
+    # series_avg(query_params, limit=100)
+    #     Returns the average scores and stats for each series.
+
+    # ground_avg(query_params, limit=100)
+    #     Returns the average scores and stats based on ground played in.
+
+    # by_host(query_params, limit=100)
+    #     Returns the overall stats for each team by host team.
+
+    # by_opp(query_params, limit=100)
+    #     Returns the overall stats for each team against each opposition team.
+
+    # by_year(query_params, limit=100)
+    #     Returns the overall stats for each team by year.
+
+    # by_season(query_params, limit=100)
+    #     Returns the overall stats for each team by season.
+
+    # overall_extras(query_params, limit=100)
+    #     Returns the overall extras scored by each team and other stats related to extras.
+
+    # extras_inn(query_params, limit=100)
+    #     Returns the extras scored by innings.
     def __init__(self):
         # Default query parameters for team data
         self.query = {"type": "team", "template": "results"}
@@ -54,7 +53,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -72,7 +71,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -95,7 +94,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -117,7 +116,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -139,7 +138,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -161,7 +160,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -183,7 +182,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -205,7 +204,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -227,7 +226,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -249,7 +248,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -271,7 +270,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.
@@ -293,7 +292,7 @@ class Team:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
             The data limit for number of records returned. Default limit is 100.

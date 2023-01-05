@@ -4,81 +4,79 @@ from .scraper import Scraper
 class Player:
     """
     The Player class contains all the functions that extract data related to players
-
-    Attributes
-    ----------
-    player_id : int
-        ID of the player obtained from Cricinfo
-
-    Methods
-    -------
-    career_summary(query_params)
-        Returns the career summary stats of the player.
-
-    inn_list(query_params)
-        Returns the list of innings played by the player and stats.
-
-    match_list(query_params)
-        Returns the list of matches played by the player and stats.
-
-    cumulative_avg(query_params)
-        Returns the cumulative average of all matches played.
-
-    reverse_cumulative(query_params)
-        Returns the reverse cumulative average of all matches played.
-
-    series_avg(query_params)
-        Returns the average scores and bowling stats for each series.
-
-    ground_avg(query_params)
-        Returns the average scores and bowling stats in each ground played.
-
-    match_results(query_params)
-        Returns the results of all matches played.
-
-    match_awards(query_params)
-        Returns the awards earned in all matches.
-
-    series_awards(query_params)
-        Returns the awards earned in all series.
-
-    partnership_summary(query_params)
-        Returns the summary stats of all partnerships.
-
-    partnership_list(query_params)
-        Returns the list of all partnerships and stats.
-
-    dismissal_summary(query_params)
-        Returns the summary of all batting dismissals under various groupings.
-
-    bowler_summary(query_params)
-        Returns the summary of stats against all bowlers faced.
-
-    fielder_summary(query_params)
-        Returns the summary of stats and dismissals against fielding players.
-
-    dismissal_list(query_params)
-        Returns the list of all dismissals.
-
-    dism_summary(query_params)
-        Returns the summary of all wickets by the player.
-
-    batsman_summary(query_params)
-        Returns the summary stats of all batters dismissed.
-
-    fielder_summary(query_params)
-        Returns the summary stats dismissals by fielders.
-
-    wickets_list(query_params)
-        Returns the list of all wickets taken.
     """
+
+    # Attributes
+    # ----------
+    # player_id : int
+    #     ID of the player obtained from Cricinfo
+
+    # Methods
+    # -------
+    # career_summary(query_params)
+    #     Returns the career summary stats of the player.
+
+    # inn_list(query_params)
+    #     Returns the list of innings played by the player and stats.
+
+    # match_list(query_params)
+    #     Returns the list of matches played by the player and stats.
+
+    # cumulative_avg(query_params)
+    #     Returns the cumulative average of all matches played.
+
+    # reverse_cumulative(query_params)
+    #     Returns the reverse cumulative average of all matches played.
+
+    # series_avg(query_params)
+    #     Returns the average scores and bowling stats for each series.
+
+    # ground_avg(query_params)
+    #     Returns the average scores and bowling stats in each ground played.
+
+    # match_results(query_params)
+    #     Returns the results of all matches played.
+
+    # match_awards(query_params)
+    #     Returns the awards earned in all matches.
+
+    # series_awards(query_params)
+    #     Returns the awards earned in all series.
+
+    # partnership_summary(query_params)
+    #     Returns the summary stats of all partnerships.
+
+    # partnership_list(query_params)
+    #     Returns the list of all partnerships and stats.
+
+    # dismissal_summary(query_params)
+    #     Returns the summary of all batting dismissals under various groupings.
+
+    # bowler_summary(query_params)
+    #     Returns the summary of stats against all bowlers faced.
+
+    # fielder_summary(query_params)
+    #     Returns the summary of stats and dismissals against fielding players.
+
+    # dismissal_list(query_params)
+    #     Returns the list of all dismissals.
+
+    # dism_summary(query_params)
+    #     Returns the summary of all wickets by the player.
+
+    # batsman_summary(query_params)
+    #     Returns the summary stats of all batters dismissed.
+
+    # fielder_summary(query_params)
+    #     Returns the summary stats dismissals by fielders.
+
+    # wickets_list(query_params)
+    #     Returns the list of all wickets taken.
 
     def __init__(self, player_id):
         """
-        Parameters
-        ----------
-        player_id : int
-            ID of the player obtained from Cricinfo
+        :param player_id: The player id obtained from the Cricinfo website
+        :type player_id: int
         """
         # Default results parameter required by cricinfo in all queries
         self.query = {"template": "results"}
@@ -90,13 +88,26 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
         -------
-        pandas.Dataframe
+        cric_data : pandas.Dataframe
             A dataframe containing the query results
+
+        Examples
+        -------
+        .. code-block:: python
+
+            player = player.Player(49764)
+            query_params = {
+                'class' : '1',
+                'type' : 'allround'
+            }
+
+            cric_data = player.career_summary(query_params)
+            print(cric_data.head())
         """
         # Update default query dict with query_params dict
         self.query.update(query_params)
@@ -110,7 +121,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -130,7 +141,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -150,7 +161,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -170,7 +181,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -190,7 +201,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -210,7 +221,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -230,7 +241,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -250,7 +261,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -270,7 +281,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -291,7 +302,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -318,7 +329,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -345,7 +356,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -372,7 +383,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -399,7 +410,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -426,7 +437,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -454,7 +465,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -481,7 +492,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -508,7 +519,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
@@ -535,7 +546,7 @@ class Player:
 
         Parameters
         ----------
-        query_params (dict of str) : str
+        query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
 
         Returns
