@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.abspath(".."))
 project = "Cricguru"
 copyright = "2023, Pavithran Thilakanathan"
 author = "Pavithran Thilakanathan"
-release = "1.1.0"
+release = "1.3.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
