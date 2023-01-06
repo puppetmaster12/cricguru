@@ -1,9 +1,6 @@
 API
 ===
 
-.. API
-.. ----
-
 cricguru.player
 ---------------
 
@@ -11,14 +8,6 @@ cricguru.player
    :members:
    :undoc-members:
    :show-inheritance:
-
-.. cricguru.scraper
-.. ----------------
-
-.. .. automodule:: cricguru.scraper
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
 
 cricguru.team
 -------------

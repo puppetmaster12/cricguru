@@ -1,7 +1,6 @@
 Installation
 ============
 
-
 At the command line:
 
 .. code-block:: rst

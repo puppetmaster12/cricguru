@@ -41,8 +41,28 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#class">class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#team">team</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opposition">opposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#home-or-away">home_or_away</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results">results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#season">season</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spanmax1">spanmax1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spanmin1">spanmin1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ground">ground</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#player-parameters">Player Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type">type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cricguru.html">API</a></li>
 </ul>
 
@@ -72,6 +92,93 @@
              
   <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h1>
+<p>In order to use the package you need to import either the team or player submodule
+which contain the classes.</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<p>Statsguru uses a specific set of parameters in its search queries. The following are all the
+parameters necessary to use the functions implemented in both the team and player submodules.
+These must be supplied in the form of a dictionary to any function used. All parameters are
+to be in string format.</p>
+<section id="class">
+<h3>class<a class="headerlink" href="#class" title="Permalink to this heading"></a></h3>
+<p>The format of the matches. For team data this parameter is mandatory. Values: Test - 1, One-day - 2, T20 - 3, All - 11</p>
+</section>
+<section id="team">
+<h3>team<a class="headerlink" href="#team" title="Permalink to this heading"></a></h3>
+<p>The team for which you need to filter by. This parameter is optional. Excluding this will give
+overall results. Most of the team ids can be found in the overview section of the docs. The rest
+will be updated soon.</p>
+</section>
+<section id="opposition">
+<h3>opposition<a class="headerlink" href="#opposition" title="Permalink to this heading"></a></h3>
+<p>The opposing team played against the team specified in the team parameter. This again is an optional
+parameter. The same ids team ids apply here.</p>
+</section>
+<section id="home-or-away">
+<h3>home_or_away<a class="headerlink" href="#home-or-away" title="Permalink to this heading"></a></h3>
+<p>Whether the team was playing in home, away or in a neutral ground. The values are 1,2 and 3 respectively.</p>
+</section>
+<section id="results">
+<h3>results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h3>
+<p>The results of the match. The values are 1,2,3 and 5 for win, loss, tie and n/r respectively.</p>
+</section>
+<section id="season">
+<h3>season<a class="headerlink" href="#season" title="Permalink to this heading"></a></h3>
+<p>This is the season the matches were played. The parameter value will simply be the starting year of the
+season. For example, 1973 for 1973/4 season.</p>
+</section>
+<section id="spanmax1">
+<h3>spanmax1<a class="headerlink" href="#spanmax1" title="Permalink to this heading"></a></h3>
+<p>The date upto which you require records. This must be a string in the format DD-Mon-YYYY - “10 Dec 2021”.</p>
+</section>
+<section id="spanmin1">
+<h3>spanmin1<a class="headerlink" href="#spanmin1" title="Permalink to this heading"></a></h3>
+<p>This is the minimum date from which you require the records. The format is the same as spanmax1.</p>
+</section>
+<section id="ground">
+<h3>ground<a class="headerlink" href="#ground" title="Permalink to this heading"></a></h3>
+<p>The ground on which the matches were played. All ground ids are available in the overview.</p>
+</section>
+</section>
+<section id="player-parameters">
+<h2>Player Parameters<a class="headerlink" href="#player-parameters" title="Permalink to this heading"></a></h2>
+<p>These parameters are specific to the player class functions and would not work with the team class.</p>
+<section id="type">
+<h3>type<a class="headerlink" href="#type" title="Permalink to this heading"></a></h3>
+<p>The type of data about the player that you require. The values are allround, batting, bowling and fielding.</p>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<p>You can get overall figures for all teams with the following. You must
+pass in the query parameters in a dictionary as shown.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cricguru</span> <span class="kn">import</span> <span class="n">team</span>
+
+<span class="n">team</span> <span class="o">=</span> <span class="n">team</span><span class="o">.</span><span class="n">Team</span><span class="p">()</span>
+<span class="n">query_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;results&quot;</span><span class="p">}</span>
+<span class="n">cric_data</span> <span class="o">=</span> <span class="n">team</span><span class="o">.</span><span class="n">overall</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cric_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>For player data you have to provide the player id to initialize the
+player object and then call the function for the type of data you
+require. You have to specify what type of player data you need such as
+allround, batting or bowling.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cricguru</span> <span class="kn">import</span> <span class="n">player</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">Player</span><span class="p">(</span><span class="mi">49764</span><span class="p">)</span>
+<span class="n">query_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;class&#39;</span> <span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;type&#39;</span> <span class="p">:</span> <span class="s1">&#39;allround&#39;</span>
+<span class="p">}</span>
+
+<span class="n">cric_data</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">career_summary</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cric_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
