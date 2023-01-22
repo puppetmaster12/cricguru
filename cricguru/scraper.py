@@ -15,26 +15,34 @@ load_dotenv()
 class Scraper:
     def __init__(self, query_params):
         self.query_params = query_params
+        self.page_counter = 0
 
     def getTeamData(self, limit=30):
         encoded_params = urlencode(self.query_params)
         # URLS
-        url = "https://stats.espncricinfo.com/ci/engine/stats/index.html?{0}&page={1}"
+        host_url = (
+            "https://stats.espncricinfo.com/ci/engine/stats/index.html?{0}&page={1}"
+        )
 
-        page_counter = 0
         row_limit = 0
         cric_data_pages = []
 
         # Scraper loop
         while True:
-            page_counter += 1
-            url = url.format(encoded_params, str(page_counter))
+            self.page_counter += 1
+            url = host_url.format(encoded_params, str(self.page_counter))
             dfs = pd.read_html(url)
             row_limit += len(dfs[2])
 
+            if (
+                dfs[2].iloc[dfs[2].index.get_loc(0), 0]
+                == "No records available to match this query"
+            ):
+                break
+
             if row_limit < limit:
                 cric_data_pages.append(dfs[2])
-            elif page_counter == 1 and len(dfs[2]) > limit:
+            elif self.page_counter == 1 and len(dfs[2]) > limit:
                 cric_data_pages.append(dfs[2].iloc[:limit])
                 break
             else:
