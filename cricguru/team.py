@@ -1,4 +1,4 @@
-from .scraper import Scraper
+from scraper import Scraper
 
 
 class Team:
@@ -8,47 +8,47 @@ class Team:
 
     # Methods
     # -------
-    # overall(query_params, limit=100)
+    # overall(query_params, limit=30)
     #     Returns overall figures for all matches played by each team.
 
-    # inn_by_inn(query_params, limit=100)
+    # inn_by_inn(query_params, limit=30)
     #     Returns match results for each innings.
 
-    # matchtot(query_params, limit=100)
+    # matchtot(query_params, limit=30)
     #     Returns total scores for each team by match.
 
-    # matchres(query_params, limit=100)
+    # matchres(query_params, limit=30)
     #     Returns results of each match.
 
-    # series_avg(query_params, limit=100)
+    # series_avg(query_params, limit=30)
     #     Returns the average scores and stats for each series.
 
-    # ground_avg(query_params, limit=100)
+    # ground_avg(query_params, limit=30)
     #     Returns the average scores and stats based on ground played in.
 
-    # by_host(query_params, limit=100)
+    # by_host(query_params, limit=30)
     #     Returns the overall stats for each team by host team.
 
-    # by_opp(query_params, limit=100)
+    # by_opp(query_params, limit=30)
     #     Returns the overall stats for each team against each opposition team.
 
-    # by_year(query_params, limit=100)
+    # by_year(query_params, limit=30)
     #     Returns the overall stats for each team by year.
 
-    # by_season(query_params, limit=100)
+    # by_season(query_params, limit=30)
     #     Returns the overall stats for each team by season.
 
-    # overall_extras(query_params, limit=100)
+    # overall_extras(query_params, limit=30)
     #     Returns the overall extras scored by each team and other stats related to extras.
 
-    # extras_inn(query_params, limit=100)
+    # extras_inn(query_params, limit=30)
     #     Returns the extras scored by innings.
     def __init__(self):
         # Default query parameters for team data
         self.query = {"type": "team", "template": "results"}
 
     # OVERALL FIGURES
-    def overall(self, query_params, limit=100):
+    def overall(self, query_params, limit=30):
         """Returns the overall figures for all matches played by each team.
 
         Parameters
@@ -56,7 +56,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
         """
         # Update default query dict with query_params dict
         self.query.update(query_params)
@@ -66,7 +66,7 @@ class Team:
         return cric_data
 
     # INNINGS BY INNINGS
-    def inn_by_inn(self, query_params, limit=100):
+    def inn_by_inn(self, query_params, limit=30):
         """Returns match results for each innings.
 
         Parameters
@@ -74,7 +74,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -90,7 +90,7 @@ class Team:
         return cric_data
 
     # MATCH TOTALS
-    def matchtot(self, query_params, limit=100):
+    def matchtot(self, query_params, limit=30):
         """Returns total scores for each team by match.
 
         Parameters
@@ -98,7 +98,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -113,7 +113,7 @@ class Team:
         return cric_data
 
     # MATCH RESULTS
-    def matchres(self, query_params, limit=100):
+    def matchres(self, query_params, limit=30):
         """Returns the overall results of each match.
 
         Parameters
@@ -121,7 +121,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -136,7 +136,7 @@ class Team:
         return cric_data
 
     # SERIES AVERAGE
-    def series_avg(self, query_params, limit=100):
+    def series_avg(self, query_params, limit=30):
         """Returns the average scores and stats for each series.
 
         Parameters
@@ -144,7 +144,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -159,7 +159,7 @@ class Team:
         return cric_data
 
     # GROUND AVERAGE
-    def ground_avg(self, query_params, limit=100):
+    def ground_avg(self, query_params, limit=30):
         """Returns the average scores and stats based on ground played in.
 
         Parameters
@@ -167,7 +167,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -182,7 +182,7 @@ class Team:
         return cric_data
 
     # RESULTS BY HOST COUNTRY
-    def by_host(self, query_params, limit=100):
+    def by_host(self, query_params, limit=30):
         """Returns the overall stats for each team by host team.
 
         Parameters
@@ -190,7 +190,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -205,7 +205,7 @@ class Team:
         return cric_data
 
     # RESULTS BY OPPOSITION
-    def by_opp(self, query_params, limit=100):
+    def by_opp(self, query_params, limit=30):
         """Returns the overall stats for each team against each opposition team.
 
         Parameters
@@ -213,7 +213,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -228,7 +228,7 @@ class Team:
         return cric_data
 
     # BY YEAR
-    def by_year(self, query_params, limit=100):
+    def by_year(self, query_params, limit=30):
         """Returns the overall stats for each team by year.
 
         Parameters
@@ -236,7 +236,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -245,13 +245,14 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "year"
+        print(self.query)
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
         return cric_data
 
     # BY SEASON
-    def by_season(self, query_params, limit=100):
+    def by_season(self, query_params, limit=30):
         """Returns the overall stats for each team by season.
 
         Parameters
@@ -259,7 +260,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -274,7 +275,7 @@ class Team:
         return cric_data
 
     # OVERALL EXTRAS
-    def overall_extras(self, query_params, limit=100):
+    def overall_extras(self, query_params, limit=30):
         """Returns the overall extras scored by each team and other stats related to extras.
 
         Parameters
@@ -282,7 +283,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
@@ -297,7 +298,7 @@ class Team:
         return cric_data
 
     # EXTRAS BY INNINGS
-    def extras_inn(self, query_params, limit=100):
+    def extras_inn(self, query_params, limit=30):
         """Returns the extras scored by innings.
 
         Parameters
@@ -305,7 +306,7 @@ class Team:
         query_params : dict[str, list, or set or dict]
             A dictionary containing all the query parameters.
         limit : int
-            The data limit for number of records returned. Default limit is 100.
+            The data limit for number of records returned. Default limit is 30.
 
         Returns
         -------
