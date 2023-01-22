@@ -84,6 +84,7 @@ class Team:
         self.query.update(query_params)
         # Each data function has a unique view parameter ex. innings
         self.query["view"] = "innings"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -106,6 +107,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "match"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -128,6 +130,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "results"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -150,6 +153,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "series"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -172,6 +176,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "ground"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -194,6 +199,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "host"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -216,6 +222,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "opposition"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -238,6 +245,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "year"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -260,6 +268,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "season"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -282,6 +291,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "extras"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
@@ -304,6 +314,7 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "extras_innings"
+        scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(query, limit)
 
         return cric_data
