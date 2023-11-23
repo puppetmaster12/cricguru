@@ -62,3 +62,13 @@ class Scraper:
         cric_data = dfs[3]
         cric_data = cric_data.loc[:, ~cric_data.columns.str.startswith("Unnamed")]
         return cric_data
+    
+    def getPlayerAvgData(self, player_id=0):
+        url = "https://stats.espncricinfo.com/ci/engine/player/{0}.html?{1}"
+        encoded_params = urlencode(self.query_params)
+        
+        url = url.format(str(player_id), encoded_params)
+        dfs = pd.read_html(url)
+        cric_data = dfs[2]
+        cric_data = cric_data.loc[:, ~cric_data.columns.str.startswith("Unnamed")]
+        return cric_data

@@ -567,3 +567,24 @@ class Player:
 
             return cric_data
         raise Exception("Wickets list is only available for bowling data")
+    
+    def career_avg(self, query_params):
+        """Returns career average of the player.
+
+        Parameters
+        ----------
+        query_params : dict[str, list, or set or dict]
+            A dictionary containing all the query parameters.
+
+        Returns
+        -------
+        pandas.Dataframe
+            A dataframe containing the query results
+
+        """
+        self.query.update(query_params)
+        
+        scraper = Scraper(self.query)
+        cric_data = scraper.getPlayerAvgData(self.player_id)
+
+        return cric_data
