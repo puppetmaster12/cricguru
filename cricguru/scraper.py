@@ -5,9 +5,6 @@ from urllib.parse import urlencode
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Get all data for given query parameters
 # ------------- Note -------------
