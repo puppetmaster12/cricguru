@@ -112,7 +112,7 @@ class Player:
         # Update default query dict with query_params dict
         self.query.update(query_params)
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -132,7 +132,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "innings"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -152,7 +152,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "match"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -172,7 +172,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "cumulative"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -192,7 +192,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "reverse_cumulative"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -212,7 +212,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "series"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -232,7 +232,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "ground"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -252,7 +252,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "results"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -272,7 +272,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "awards_match"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -292,7 +292,7 @@ class Player:
         self.query.update(query_params)
         self.query["view"] = "awards_series"
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerData(self.player_id)
+        cric_data = scraper.getPlayerDataSoup(self.player_id)
 
         return cric_data
 
@@ -319,7 +319,7 @@ class Player:
         self.query["view"] = "fow_summary"
         if self.query["type"] == "batting":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Partnership summary is only available for batting data")
@@ -346,7 +346,7 @@ class Player:
         self.query["view"] = "fow_list"
         if self.query["type"] == "batting":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Partnership list is only available for batting data")
@@ -373,7 +373,7 @@ class Player:
         self.query["view"] = "dismissal_summary"
         if self.query["type"] == "batting":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Dismissal summary is only available for batting data")
@@ -400,7 +400,7 @@ class Player:
         self.query["view"] = "bowler_summary"
         if self.query["type"] == "batting":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Bowler summary is only available for batting data")
@@ -427,7 +427,7 @@ class Player:
         self.query["view"] = "fielder_summary"
         if self.query["type"] == "batting":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Fielder summary is only available for batting data")
@@ -454,7 +454,7 @@ class Player:
         self.query["view"] = "dismissal_list"
         if self.query["type"] == "batting":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Dismissal list is only available for batting data")
@@ -482,7 +482,7 @@ class Player:
         self.query["view"] = "dismissal_summary"
         if self.query["type"] == "bowling":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Dismissal summary is only available for bowling data")
@@ -509,7 +509,7 @@ class Player:
         self.query["view"] = "batsman_summary"
         if self.query["type"] == "bowling":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Batsman summary is only available for bowling data")
@@ -536,7 +536,7 @@ class Player:
         self.query["view"] = "fielder_summary"
         if self.query["type"] == "bowling":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Fielder summary is only available for bowling data")
@@ -563,7 +563,7 @@ class Player:
         self.query["view"] = "dismissal_list"
         if self.query["type"] == "bowling":
             scraper = Scraper(self.query)
-            cric_data = scraper.getPlayerData(self.player_id)
+            cric_data = scraper.getPlayerDataSoup(self.player_id)
 
             return cric_data
         raise Exception("Wickets list is only available for bowling data")
@@ -585,6 +585,6 @@ class Player:
         self.query.update(query_params)
         
         scraper = Scraper(self.query)
-        cric_data = scraper.getPlayerAvgData(self.player_id)
+        cric_data = scraper.getPlayerAvgSoupData(self.player_id)
 
         return cric_data

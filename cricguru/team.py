@@ -245,7 +245,6 @@ class Team:
         """
         self.query.update(query_params)
         self.query["view"] = "year"
-        print(self.query)
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 

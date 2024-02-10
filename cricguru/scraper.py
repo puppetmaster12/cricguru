@@ -26,12 +26,18 @@ class Scraper:
 
         row_limit = 0
         cric_data_pages = []
-
+        
         # Scraper loop
         while True:
             self.page_counter += 1
             url = host_url.format(encoded_params, str(self.page_counter))
-            dfs = pd.read_html(url)
+            headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
+            response = requests.get(url, headers=headers)
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            tables = soup.find_all('table')
+            # print(tables)  
+            dfs = pd.read_html(str(tables))
             row_limit += len(dfs[2])
 
             if (
@@ -48,21 +54,65 @@ class Scraper:
             else:
                 cric_data_pages.append(dfs[2].iloc[: limit - len(dfs[2])])
                 break
-
         cric_data = pd.concat(cric_data_pages)
         cric_data = cric_data.loc[:, ~cric_data.columns.str.startswith("Unnamed")]
         return cric_data
 
+    # V1 function without header no longer in use
     def getPlayerData(self, player_id=0):
         url = "https://stats.espncricinfo.com/ci/engine/player/{0}.html?{1}"
         encoded_params = urlencode(self.query_params)
 
         url = url.format(str(player_id), encoded_params)
+        print('test')
         dfs = pd.read_html(url)
         cric_data = dfs[3]
         cric_data = cric_data.loc[:, ~cric_data.columns.str.startswith("Unnamed")]
         return cric_data
     
+    # New funtion using requests instead of read_html directly on the url
+    def getPlayerDataSoup(self, player_id=0):
+        url = "https://stats.espncricinfo.com/ci/engine/player/{0}.html?{1}"
+        # url = 'https://stats.espncricinfo.com/ci/engine/player/253802.html?class=2;template=results;type=allround'
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
+        encoded_params = urlencode(self.query_params)
+        
+        url = url.format(str(player_id), encoded_params)
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        tables = soup.find_all('table')        
+        
+        player_data = tables[3]
+        
+        player_data = pd.read_html(str(player_data))[0]
+        
+        player_data = player_data.loc[:, ~player_data.columns.str.startswith("Unnamed")]
+        
+        return player_data    
+    
+    # New funtion using requests instead of read_html directly on the url
+    def getPlayerAvgSoupData(self, player_id=0):
+        url = "https://stats.espncricinfo.com/ci/engine/player/{0}.html?{1}"
+        # url = 'https://stats.espncricinfo.com/ci/engine/player/253802.html?class=2;template=results;type=allround'
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
+        encoded_params = urlencode(self.query_params)
+        
+        url = url.format(str(player_id), encoded_params)
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        tables = soup.find_all('table')        
+        
+        player_data = tables[2]
+        
+        player_data = pd.read_html(str(player_data))[0]
+        
+        player_data = player_data.loc[:, ~player_data.columns.str.startswith("Unnamed")]
+        
+        return player_data
+    
+    # V1 function without header no longer in use
     def getPlayerAvgData(self, player_id=0):
         url = "https://stats.espncricinfo.com/ci/engine/player/{0}.html?{1}"
         encoded_params = urlencode(self.query_params)
