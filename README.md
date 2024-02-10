@@ -21,12 +21,23 @@ pip install cricguru
 ```
 
 ## Usage
-You can get overall figures for all teams with the following. You must pass in the query parameters in a dictionary as shown.
+You can get overall figures for all teams with the following. You must pass in the query parameters in a dictionary as shown. The "template" key with a "results" value is required along with the "class" variable which specifies which format of cricket you require data from. The classes for each format are as follows.
+<br>
+1 - Test
+<br>2 - ODI
+<br>3 - T20
+<br>11 - All
+<br>10 - Women's T20i
+<br>8 - Women's Test
+<br>9 - Women's ODI
+<br>20 - Youth Test
+<br>21 - Youth ODI
+<br>22 - Youth T20
 ```sh
 from cricguru import team
 
 team = team.Team()
-query_params = {"template": "results"}
+query_params = {"template": "results", "class": "2"}
 cric_data = team.overall(query_params)
 
 #Returns a pandas dataframe
