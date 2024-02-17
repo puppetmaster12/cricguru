@@ -43,9 +43,10 @@ class Team:
 
     # extras_inn(query_params, limit=30)
     #     Returns the extras scored by innings.
-    def __init__(self):
+    def __init__(self, is_csv=True):
         # Default query parameters for team data
         self.query = {"type": "team", "template": "results"}
+        self.is_csv = is_csv
 
     # OVERALL FIGURES
     def overall(self, query_params, limit=30):
@@ -62,8 +63,11 @@ class Team:
         self.query.update(query_params)
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
-
-        return cric_data
+        
+        if self.is_csv:
+            cric_data.to_csv('overall.csv')
+        else:
+            return cric_data
 
     # INNINGS BY INNINGS
     def inn_by_inn(self, query_params, limit=30):
@@ -87,7 +91,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('inn_by_inn.csv')
+        else:
+            return cric_data
 
     # MATCH TOTALS
     def matchtot(self, query_params, limit=30):
@@ -110,7 +117,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('matchtot.csv')
+        else:
+            return cric_data
 
     # MATCH RESULTS
     def matchres(self, query_params, limit=30):
@@ -133,7 +143,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('matchres.csv')
+        else:
+            return cric_data
 
     # SERIES AVERAGE
     def series_avg(self, query_params, limit=30):
@@ -156,7 +169,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('series_avg.csv')
+        else:
+            return cric_data
 
     # GROUND AVERAGE
     def ground_avg(self, query_params, limit=30):
@@ -179,7 +195,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('ground_avg.csv')
+        else:
+            return cric_data
 
     # RESULTS BY HOST COUNTRY
     def by_host(self, query_params, limit=30):
@@ -202,7 +221,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('by_host.csv')
+        else:
+            return cric_data
 
     # RESULTS BY OPPOSITION
     def by_opp(self, query_params, limit=30):
@@ -225,7 +247,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('by_opp.csv')
+        else:
+            return cric_data
 
     # BY YEAR
     def by_year(self, query_params, limit=30):
@@ -248,7 +273,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('by_year.csv')
+        else:
+            return cric_data
 
     # BY SEASON
     def by_season(self, query_params, limit=30):
@@ -271,7 +299,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('by_season.csv')
+        else:
+            return cric_data
 
     # OVERALL EXTRAS
     def overall_extras(self, query_params, limit=30):
@@ -294,7 +325,10 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('overall_extras.csv')
+        else:
+            return cric_data
 
     # EXTRAS BY INNINGS
     def extras_inn(self, query_params, limit=30):
@@ -317,4 +351,7 @@ class Team:
         scraper = Scraper(self.query)
         cric_data = scraper.getTeamData(limit)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('extras_inn.csv')
+        else:
+            return cric_data

@@ -73,7 +73,7 @@ class Player:
     # wickets_list(query_params)
     #     Returns the list of all wickets taken.
 
-    def __init__(self, player_id):
+    def __init__(self, player_id, is_csv=True):
         """
         :param player_id: The player id obtained from the Cricinfo website
         :type player_id: int
@@ -82,6 +82,7 @@ class Player:
         self.query = {"template": "results"}
         self.player_id = player_id
         self.cric_data = []
+        self.is_csv = is_csv
 
     def career_summary(self, query_params):
         """Returns the career summary stats of the player.
@@ -114,7 +115,11 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('career_summary.csv')
+        else:
+            return cric_data
+        
 
     def inn_list(self, query_params):
         """Returns the list of innings played by the player and stats.
@@ -134,7 +139,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('inn_list.csv')
+        else:
+            return cric_data
 
     def match_list(self, query_params):
         """Returns the list of matches played by the player and stats.
@@ -154,7 +162,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('match_list.csv')
+        else:
+            return cric_data
 
     def cumulative_avg(self, query_params):
         """Returns the cumulative average of all matches played.
@@ -174,7 +185,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('cumulative_avg.csv')
+        else:
+            return cric_data
 
     def reverse_cumulative(self, query_params):
         """Returns the reverse cumulative average of all matches played.
@@ -194,7 +208,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('reverse_cumulative.csv')
+        else:
+            return cric_data
 
     def series_avg(self, query_params):
         """Returns the average scores and bowling stats for each series.
@@ -214,7 +231,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('series_avg.csv')
+        else:
+            return cric_data
 
     def ground_avg(self, query_params):
         """Returns the average scores and bowling stats in each ground played.
@@ -234,7 +254,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('ground_avg.csv')
+        else:
+            return cric_data
 
     def match_results(self, query_params):
         """Returns the results of all matches played.
@@ -254,7 +277,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('match_results.csv')
+        else:
+            return cric_data
 
     def match_awards(self, query_params):
         """Returns the awards earned in all matches.
@@ -274,7 +300,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('match_awards.csv')
+        else:
+            return cric_data
 
     def series_awards(self, query_params):
         """Returns the awards earned in all series.
@@ -294,7 +323,10 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+            cric_data.to_csv('series_awards.csv')
+        else:
+            return cric_data
 
     # BATTING
     def partnership_summary(self, query_params):
@@ -321,7 +353,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('partnership_summary.csv')
+            else:
+                return cric_data
         raise Exception("Partnership summary is only available for batting data")
 
     def partnership_list(self, query_params):
@@ -348,7 +383,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('partnership_list.csv')
+            else:
+                return cric_data
         raise Exception("Partnership list is only available for batting data")
 
     def dismissal_summary(self, query_params):
@@ -375,7 +413,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('dismissal_summary.csv')
+            else:
+                return cric_data
         raise Exception("Dismissal summary is only available for batting data")
 
     def bowler_summary(self, query_params):
@@ -402,7 +443,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('bowler_summary.csv')
+            else:
+                return cric_data
         raise Exception("Bowler summary is only available for batting data")
 
     def fielder_summary(self, query_params):
@@ -429,7 +473,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('fielder_summary.csv')
+            else:
+                return cric_data
         raise Exception("Fielder summary is only available for batting data")
 
     def dismissal_list(self, query_params):
@@ -456,7 +503,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('dismissal_list.csv')
+            else:
+                return cric_data
         raise Exception("Dismissal list is only available for batting data")
 
     # BOWLING
@@ -484,7 +534,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('dism_summary.csv')
+            else:
+                return cric_data
         raise Exception("Dismissal summary is only available for bowling data")
 
     def batsman_summary(self, query_params):
@@ -511,7 +564,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('batsman_summary.csv')
+            else:
+                return cric_data
         raise Exception("Batsman summary is only available for bowling data")
 
     def fielder_summary(self, query_params):
@@ -538,7 +594,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('fielder_summary.csv')
+            else:
+                return cric_data
         raise Exception("Fielder summary is only available for bowling data")
 
     def wickets_list(self, query_params):
@@ -565,7 +624,10 @@ class Player:
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
 
-            return cric_data
+            if self.is_csv:
+                cric_data.to_csv('wickets_list.csv')
+            else:
+                return cric_data
         raise Exception("Wickets list is only available for bowling data")
     
     def career_avg(self, query_params):
@@ -587,4 +649,7 @@ class Player:
         scraper = Scraper(self.query)
         cric_data = scraper.getPlayerAvgSoupData(self.player_id)
 
-        return cric_data
+        if self.is_csv:
+                cric_data.to_csv('career_avg.csv')
+        else:
+            return cric_data
