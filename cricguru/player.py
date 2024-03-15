@@ -73,7 +73,7 @@ class Player:
     # wickets_list(query_params)
     #     Returns the list of all wickets taken.
 
-    def __init__(self, player_id, is_csv=True):
+    def __init__(self, player_id, is_csv=False):
         """
         :param player_id: The player id obtained from the Cricinfo website
         :type player_id: int
@@ -533,7 +533,8 @@ class Player:
         if self.query["type"] == "bowling":
             scraper = Scraper(self.query)
             cric_data = scraper.getPlayerDataSoup(self.player_id)
-
+            if cric_data is None:
+                return None
             if self.is_csv:
                 cric_data.to_csv('dism_summary.csv')
             else:

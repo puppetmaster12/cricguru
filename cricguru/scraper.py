@@ -63,6 +63,9 @@ class Scraper:
         url = url.format(str(player_id), encoded_params)
         print('test')
         dfs = pd.read_html(url)
+        if dfs[2].iloc[dfs[2].index.get_loc(0), 0] == "No records available to match this query":
+            return None
+
         cric_data = dfs[3]
         cric_data = cric_data.loc[:, ~cric_data.columns.str.startswith("Unnamed")]
         return cric_data
@@ -78,14 +81,17 @@ class Scraper:
         response = requests.get(url, headers=headers)
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        tables = soup.find_all('table')        
+        tables = soup.find_all('table')
+        # print(tables[2])
+        dfs = pd.read_html(str(tables))
+        if dfs[2].iloc[dfs[2].index.get_loc(0), 0] == "No records available to match this query":
+            return None
         
         player_data = tables[3]
         
         player_data = pd.read_html(str(player_data))[0]
-        
         player_data = player_data.loc[:, ~player_data.columns.str.startswith("Unnamed")]
-        
+        # print(player_data.head())
         return player_data    
     
     # New funtion using requests instead of read_html directly on the url
