@@ -10,6 +10,8 @@ class Player:
     # ----------
     # player_id : int
     #     ID of the player obtained from Cricinfo
+    # is_csv : Boolean
+    #   Whether of not to generate csv file for returned dataset
 
     # Methods
     # -------
@@ -83,8 +85,9 @@ class Player:
         self.player_id = player_id
         self.cric_data = []
         self.is_csv = is_csv
-
+    
     def career_summary(self, query_params):
+        
         """Returns the career summary stats of the player.
 
         Parameters

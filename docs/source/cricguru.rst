@@ -9,6 +9,10 @@ cricguru.player
    :undoc-members:
    :show-inheritance:
 
+.. code-block:: python
+   career_summary(query_params)
+   # Returns the career summary stats of the player.
+
 cricguru.team
 -------------
 
