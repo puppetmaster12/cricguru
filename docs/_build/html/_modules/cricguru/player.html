@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cricguru.player &mdash; Cricguru 1.1.0 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <title>cricguru.player &mdash; Cricguru 2.1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=841abef3"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -26,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Cricguru
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Cricguru
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -38,7 +43,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../cricguru.html">cricguru package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cricguru.html">API</a></li>
 </ul>
 
         </div>
@@ -54,7 +62,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
       <li class="breadcrumb-item active">cricguru.player</li>
       <li class="wy-breadcrumbs-aside">
@@ -69,8 +77,10 @@
 <span></span><span class="kn">from</span> <span class="nn">.scraper</span> <span class="kn">import</span> <span class="n">Scraper</span>
 
 
-<div class="viewcode-block" id="Player"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player">[docs]</a><span class="k">class</span> <span class="nc">Player</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Player">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player">[docs]</a>
+<span class="k">class</span> <span class="nc">Player</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The Player class contains all the functions that extract data related to players</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -141,8 +151,8 @@
     <span class="c1"># wickets_list(query_params)</span>
     <span class="c1">#     Returns the list of all wickets taken.</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_id</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_id</span><span class="p">,</span> <span class="n">is_csv</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :param player_id: The player id obtained from the Cricinfo website</span>
 <span class="sd">        :type player_id: int</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -150,9 +160,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;results&quot;</span><span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">player_id</span> <span class="o">=</span> <span class="n">player_id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cric_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span> <span class="o">=</span> <span class="n">is_csv</span>
 
-<div class="viewcode-block" id="Player.career_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.career_summary">[docs]</a>    <span class="k">def</span> <span class="nf">career_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the career summary stats of the player.</span>
+<div class="viewcode-block" id="Player.career_summary">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.career_summary">[docs]</a>
+    <span class="k">def</span> <span class="nf">career_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the career summary stats of the player.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -180,12 +193,19 @@
         <span class="c1"># Update default query dict with query_params dict</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;career_summary.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.inn_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.inn_list">[docs]</a>    <span class="k">def</span> <span class="nf">inn_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the list of innings played by the player and stats.</span>
+        
+
+<div class="viewcode-block" id="Player.inn_list">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.inn_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">inn_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the list of innings played by the player and stats.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -200,12 +220,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;innings&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;inn_list.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.match_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_list">[docs]</a>    <span class="k">def</span> <span class="nf">match_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the list of matches played by the player and stats.</span>
+
+<div class="viewcode-block" id="Player.match_list">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">match_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the list of matches played by the player and stats.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -220,12 +246,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;match&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;match_list.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.cumulative_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.cumulative_avg">[docs]</a>    <span class="k">def</span> <span class="nf">cumulative_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the cumulative average of all matches played.</span>
+
+<div class="viewcode-block" id="Player.cumulative_avg">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.cumulative_avg">[docs]</a>
+    <span class="k">def</span> <span class="nf">cumulative_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the cumulative average of all matches played.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -240,12 +272,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cumulative&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;cumulative_avg.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.reverse_cumulative"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.reverse_cumulative">[docs]</a>    <span class="k">def</span> <span class="nf">reverse_cumulative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the reverse cumulative average of all matches played.</span>
+
+<div class="viewcode-block" id="Player.reverse_cumulative">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.reverse_cumulative">[docs]</a>
+    <span class="k">def</span> <span class="nf">reverse_cumulative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the reverse cumulative average of all matches played.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -260,12 +298,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;reverse_cumulative&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;reverse_cumulative.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.series_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.series_avg">[docs]</a>    <span class="k">def</span> <span class="nf">series_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the average scores and bowling stats for each series.</span>
+
+<div class="viewcode-block" id="Player.series_avg">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.series_avg">[docs]</a>
+    <span class="k">def</span> <span class="nf">series_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the average scores and bowling stats for each series.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -280,12 +324,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;series&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;series_avg.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.ground_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.ground_avg">[docs]</a>    <span class="k">def</span> <span class="nf">ground_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the average scores and bowling stats in each ground played.</span>
+
+<div class="viewcode-block" id="Player.ground_avg">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.ground_avg">[docs]</a>
+    <span class="k">def</span> <span class="nf">ground_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the average scores and bowling stats in each ground played.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -300,12 +350,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ground&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;ground_avg.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.match_results"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_results">[docs]</a>    <span class="k">def</span> <span class="nf">match_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the results of all matches played.</span>
+
+<div class="viewcode-block" id="Player.match_results">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">match_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the results of all matches played.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -320,12 +376,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;results&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;match_results.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.match_awards"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_awards">[docs]</a>    <span class="k">def</span> <span class="nf">match_awards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the awards earned in all matches.</span>
+
+<div class="viewcode-block" id="Player.match_awards">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.match_awards">[docs]</a>
+    <span class="k">def</span> <span class="nf">match_awards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the awards earned in all matches.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -340,12 +402,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;awards_match&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;match_awards.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-<div class="viewcode-block" id="Player.series_awards"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.series_awards">[docs]</a>    <span class="k">def</span> <span class="nf">series_awards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the awards earned in all series.</span>
+
+<div class="viewcode-block" id="Player.series_awards">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.series_awards">[docs]</a>
+    <span class="k">def</span> <span class="nf">series_awards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the awards earned in all series.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -360,13 +428,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;awards_series&quot;</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;series_awards.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># BATTING</span>
-<div class="viewcode-block" id="Player.partnership_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.partnership_summary">[docs]</a>    <span class="k">def</span> <span class="nf">partnership_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the summary stats of all partnerships.</span>
+<div class="viewcode-block" id="Player.partnership_summary">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.partnership_summary">[docs]</a>
+    <span class="k">def</span> <span class="nf">partnership_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the summary stats of all partnerships.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -387,13 +461,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fow_summary&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;partnership_summary.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Partnership summary is only available for batting data&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Player.partnership_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.partnership_list">[docs]</a>    <span class="k">def</span> <span class="nf">partnership_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the list of all partnerships and stats.</span>
+
+<div class="viewcode-block" id="Player.partnership_list">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.partnership_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">partnership_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the list of all partnerships and stats.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -414,13 +494,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fow_list&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;partnership_list.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Partnership list is only available for batting data&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Player.dismissal_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dismissal_summary">[docs]</a>    <span class="k">def</span> <span class="nf">dismissal_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the summary of all batting dismissals under various groupings.</span>
+
+<div class="viewcode-block" id="Player.dismissal_summary">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dismissal_summary">[docs]</a>
+    <span class="k">def</span> <span class="nf">dismissal_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the summary of all batting dismissals under various groupings.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -441,13 +527,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_summary&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;dismissal_summary.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Dismissal summary is only available for batting data&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Player.bowler_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.bowler_summary">[docs]</a>    <span class="k">def</span> <span class="nf">bowler_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the summary of stats against all bowlers faced.</span>
+
+<div class="viewcode-block" id="Player.bowler_summary">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.bowler_summary">[docs]</a>
+    <span class="k">def</span> <span class="nf">bowler_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the summary of stats against all bowlers faced.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -468,13 +560,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bowler_summary&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;bowler_summary.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Bowler summary is only available for batting data&quot;</span><span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="nf">fielder_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the summary of stats and dismissals against fielding players.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the summary of stats and dismissals against fielding players.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -495,13 +591,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fielder_summary&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;fielder_summary.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Fielder summary is only available for batting data&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Player.dismissal_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dismissal_list">[docs]</a>    <span class="k">def</span> <span class="nf">dismissal_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the list of all dismissals.</span>
+<div class="viewcode-block" id="Player.dismissal_list">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dismissal_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">dismissal_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the list of all dismissals.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -522,14 +623,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_list&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;batting&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;dismissal_list.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Dismissal list is only available for batting data&quot;</span><span class="p">)</span></div>
 
+
     <span class="c1"># BOWLING</span>
-<div class="viewcode-block" id="Player.dism_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dism_summary">[docs]</a>    <span class="k">def</span> <span class="nf">dism_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the summary of all wickets by the player.</span>
+<div class="viewcode-block" id="Player.dism_summary">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.dism_summary">[docs]</a>
+    <span class="k">def</span> <span class="nf">dism_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the summary of all wickets by the player.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -550,13 +657,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_summary&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
-
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cric_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;dism_summary.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Dismissal summary is only available for bowling data&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Player.batsman_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.batsman_summary">[docs]</a>    <span class="k">def</span> <span class="nf">batsman_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the summary stats of all batters dismissed.</span>
+
+<div class="viewcode-block" id="Player.batsman_summary">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.batsman_summary">[docs]</a>
+    <span class="k">def</span> <span class="nf">batsman_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the summary stats of all batters dismissed.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -577,13 +691,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;batsman_summary&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;batsman_summary.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Batsman summary is only available for bowling data&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Player.fielder_summary"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.fielder_summary">[docs]</a>    <span class="k">def</span> <span class="nf">fielder_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the summary stats dismissals by fielders.</span>
+
+<div class="viewcode-block" id="Player.fielder_summary">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.fielder_summary">[docs]</a>
+    <span class="k">def</span> <span class="nf">fielder_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the summary stats dismissals by fielders.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -604,13 +724,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fielder_summary&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;fielder_summary.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Fielder summary is only available for bowling data&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Player.wickets_list"><a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.wickets_list">[docs]</a>    <span class="k">def</span> <span class="nf">wickets_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the list of all wickets taken.</span>
+
+<div class="viewcode-block" id="Player.wickets_list">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.wickets_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">wickets_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the list of all wickets taken.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -631,10 +757,42 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dismissal_list&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bowling&quot;</span><span class="p">:</span>
             <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
-            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+            <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerDataSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
 
-            <span class="k">return</span> <span class="n">cric_data</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Wickets list is only available for bowling data&quot;</span><span class="p">)</span></div></div>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;wickets_list.csv&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cric_data</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Wickets list is only available for bowling data&quot;</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="Player.career_avg">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.player.Player.career_avg">[docs]</a>
+    <span class="k">def</span> <span class="nf">career_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns career average of the player.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        query_params : dict[str, list, or set or dict]</span>
+<span class="sd">            A dictionary containing all the query parameters.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.Dataframe</span>
+<span class="sd">            A dataframe containing the query results</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
+        
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getPlayerAvgSoupData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+                <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;career_avg.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+</div>
+
 </pre></div>
 
            </div>

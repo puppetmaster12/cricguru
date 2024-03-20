@@ -181,17 +181,14 @@ url of the player’s stats page on Cricinfo.
 Built With
 ----------
 
-This project primarily uses Python 3.8 in combination with Pandas.
-Pandas is used to get the tables directly from the Statsguru query pages
-and convert them to dataframes. Urllib is used to format the url and
-append the query parameters. Poetry is used for packaging and
-publishing.
+This project primarily uses Python 3.8 in combination with Pandas and Beautiful Soup.
+Requests and Beautiful Soup are used primarily to scrape and organize the tables and Pandas Dataframes are the main data structures. 
+Urllib is used to format the url and append the query parameters. Poetry is used for packaging and publishing.
 
 Contributing
 ------------
 
-This is an amateur project at best and I am still a complete beginner to
-Python and would greatly welcome any suggestions, advice, constructive
+All contrinbutions are greatly welcome with any suggestions, advice, constructive
 criticism, best practices or contributions to the project. Simply open a
 pull request or issue and I will check it out.
 

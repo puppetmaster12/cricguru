@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cricguru.team &mdash; Cricguru 1.1.0 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <title>cricguru.team &mdash; Cricguru 2.1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=841abef3"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -26,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Cricguru
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Cricguru
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -38,7 +43,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cricguru.html">API</a></li>
 </ul>
 
@@ -55,7 +62,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
       <li class="breadcrumb-item active">cricguru.team</li>
       <li class="wy-breadcrumbs-aside">
@@ -70,80 +77,91 @@
 <span></span><span class="kn">from</span> <span class="nn">.scraper</span> <span class="kn">import</span> <span class="n">Scraper</span>
 
 
-<div class="viewcode-block" id="Team"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team">[docs]</a><span class="k">class</span> <span class="nc">Team</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Team">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team">[docs]</a>
+<span class="k">class</span> <span class="nc">Team</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The Team class contains all the functions that extract overall and teams related data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># Methods</span>
     <span class="c1"># -------</span>
-    <span class="c1"># overall(query_params, limit=100)</span>
+    <span class="c1"># overall(query_params, limit=30)</span>
     <span class="c1">#     Returns overall figures for all matches played by each team.</span>
 
-    <span class="c1"># inn_by_inn(query_params, limit=100)</span>
+    <span class="c1"># inn_by_inn(query_params, limit=30)</span>
     <span class="c1">#     Returns match results for each innings.</span>
 
-    <span class="c1"># matchtot(query_params, limit=100)</span>
+    <span class="c1"># matchtot(query_params, limit=30)</span>
     <span class="c1">#     Returns total scores for each team by match.</span>
 
-    <span class="c1"># matchres(query_params, limit=100)</span>
+    <span class="c1"># matchres(query_params, limit=30)</span>
     <span class="c1">#     Returns results of each match.</span>
 
-    <span class="c1"># series_avg(query_params, limit=100)</span>
+    <span class="c1"># series_avg(query_params, limit=30)</span>
     <span class="c1">#     Returns the average scores and stats for each series.</span>
 
-    <span class="c1"># ground_avg(query_params, limit=100)</span>
+    <span class="c1"># ground_avg(query_params, limit=30)</span>
     <span class="c1">#     Returns the average scores and stats based on ground played in.</span>
 
-    <span class="c1"># by_host(query_params, limit=100)</span>
+    <span class="c1"># by_host(query_params, limit=30)</span>
     <span class="c1">#     Returns the overall stats for each team by host team.</span>
 
-    <span class="c1"># by_opp(query_params, limit=100)</span>
+    <span class="c1"># by_opp(query_params, limit=30)</span>
     <span class="c1">#     Returns the overall stats for each team against each opposition team.</span>
 
-    <span class="c1"># by_year(query_params, limit=100)</span>
+    <span class="c1"># by_year(query_params, limit=30)</span>
     <span class="c1">#     Returns the overall stats for each team by year.</span>
 
-    <span class="c1"># by_season(query_params, limit=100)</span>
+    <span class="c1"># by_season(query_params, limit=30)</span>
     <span class="c1">#     Returns the overall stats for each team by season.</span>
 
-    <span class="c1"># overall_extras(query_params, limit=100)</span>
+    <span class="c1"># overall_extras(query_params, limit=30)</span>
     <span class="c1">#     Returns the overall extras scored by each team and other stats related to extras.</span>
 
-    <span class="c1"># extras_inn(query_params, limit=100)</span>
+    <span class="c1"># extras_inn(query_params, limit=30)</span>
     <span class="c1">#     Returns the extras scored by innings.</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_csv</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="c1"># Default query parameters for team data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;team&quot;</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;results&quot;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span> <span class="o">=</span> <span class="n">is_csv</span>
 
     <span class="c1"># OVERALL FIGURES</span>
-<div class="viewcode-block" id="Team.overall"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.overall">[docs]</a>    <span class="k">def</span> <span class="nf">overall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the overall figures for all matches played by each team.</span>
+<div class="viewcode-block" id="Team.overall">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.overall">[docs]</a>
+    <span class="k">def</span> <span class="nf">overall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the overall figures for all matches played by each team.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Update default query dict with query_params dict</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
         <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;overall.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
 
     <span class="c1"># INNINGS BY INNINGS</span>
-<div class="viewcode-block" id="Team.inn_by_inn"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.inn_by_inn">[docs]</a>    <span class="k">def</span> <span class="nf">inn_by_inn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns match results for each innings.</span>
+<div class="viewcode-block" id="Team.inn_by_inn">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.inn_by_inn">[docs]</a>
+    <span class="k">def</span> <span class="nf">inn_by_inn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns match results for each innings.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -153,20 +171,27 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="c1"># Each data function has a unique view parameter ex. innings</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;innings&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;inn_by_inn.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># MATCH TOTALS</span>
-<div class="viewcode-block" id="Team.matchtot"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.matchtot">[docs]</a>    <span class="k">def</span> <span class="nf">matchtot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns total scores for each team by match.</span>
+<div class="viewcode-block" id="Team.matchtot">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.matchtot">[docs]</a>
+    <span class="k">def</span> <span class="nf">matchtot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns total scores for each team by match.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -175,20 +200,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;match&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;matchtot.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># MATCH RESULTS</span>
-<div class="viewcode-block" id="Team.matchres"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.matchres">[docs]</a>    <span class="k">def</span> <span class="nf">matchres</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the overall results of each match.</span>
+<div class="viewcode-block" id="Team.matchres">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.matchres">[docs]</a>
+    <span class="k">def</span> <span class="nf">matchres</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the overall results of each match.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -197,20 +229,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;results&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;matchres.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># SERIES AVERAGE</span>
-<div class="viewcode-block" id="Team.series_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.series_avg">[docs]</a>    <span class="k">def</span> <span class="nf">series_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the average scores and stats for each series.</span>
+<div class="viewcode-block" id="Team.series_avg">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.series_avg">[docs]</a>
+    <span class="k">def</span> <span class="nf">series_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the average scores and stats for each series.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -219,20 +258,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;series&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;series_avg.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># GROUND AVERAGE</span>
-<div class="viewcode-block" id="Team.ground_avg"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.ground_avg">[docs]</a>    <span class="k">def</span> <span class="nf">ground_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the average scores and stats based on ground played in.</span>
+<div class="viewcode-block" id="Team.ground_avg">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.ground_avg">[docs]</a>
+    <span class="k">def</span> <span class="nf">ground_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the average scores and stats based on ground played in.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -241,20 +287,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ground&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;ground_avg.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># RESULTS BY HOST COUNTRY</span>
-<div class="viewcode-block" id="Team.by_host"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_host">[docs]</a>    <span class="k">def</span> <span class="nf">by_host</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the overall stats for each team by host team.</span>
+<div class="viewcode-block" id="Team.by_host">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_host">[docs]</a>
+    <span class="k">def</span> <span class="nf">by_host</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the overall stats for each team by host team.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -263,20 +316,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;host&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;by_host.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># RESULTS BY OPPOSITION</span>
-<div class="viewcode-block" id="Team.by_opp"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_opp">[docs]</a>    <span class="k">def</span> <span class="nf">by_opp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the overall stats for each team against each opposition team.</span>
+<div class="viewcode-block" id="Team.by_opp">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_opp">[docs]</a>
+    <span class="k">def</span> <span class="nf">by_opp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the overall stats for each team against each opposition team.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -285,20 +345,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;opposition&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;by_opp.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># BY YEAR</span>
-<div class="viewcode-block" id="Team.by_year"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_year">[docs]</a>    <span class="k">def</span> <span class="nf">by_year</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the overall stats for each team by year.</span>
+<div class="viewcode-block" id="Team.by_year">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_year">[docs]</a>
+    <span class="k">def</span> <span class="nf">by_year</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the overall stats for each team by year.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -307,20 +374,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;by_year.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># BY SEASON</span>
-<div class="viewcode-block" id="Team.by_season"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_season">[docs]</a>    <span class="k">def</span> <span class="nf">by_season</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the overall stats for each team by season.</span>
+<div class="viewcode-block" id="Team.by_season">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.by_season">[docs]</a>
+    <span class="k">def</span> <span class="nf">by_season</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the overall stats for each team by season.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -329,20 +403,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;season&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;by_season.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># OVERALL EXTRAS</span>
-<div class="viewcode-block" id="Team.overall_extras"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.overall_extras">[docs]</a>    <span class="k">def</span> <span class="nf">overall_extras</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the overall extras scored by each team and other stats related to extras.</span>
+<div class="viewcode-block" id="Team.overall_extras">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.overall_extras">[docs]</a>
+    <span class="k">def</span> <span class="nf">overall_extras</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the overall extras scored by each team and other stats related to extras.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -351,20 +432,27 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;extras&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;overall_extras.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+
 
     <span class="c1"># EXTRAS BY INNINGS</span>
-<div class="viewcode-block" id="Team.extras_inn"><a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.extras_inn">[docs]</a>    <span class="k">def</span> <span class="nf">extras_inn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the extras scored by innings.</span>
+<div class="viewcode-block" id="Team.extras_inn">
+<a class="viewcode-back" href="../../cricguru.html#cricguru.team.Team.extras_inn">[docs]</a>
+    <span class="k">def</span> <span class="nf">extras_inn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the extras scored by innings.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        query_params : dict[str, list, or set or dict]</span>
 <span class="sd">            A dictionary containing all the query parameters.</span>
 <span class="sd">        limit : int</span>
-<span class="sd">            The data limit for number of records returned. Default limit is 100.</span>
+<span class="sd">            The data limit for number of records returned. Default limit is 30.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -373,9 +461,15 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;extras_innings&quot;</span>
-        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="n">scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">cric_data</span> <span class="o">=</span> <span class="n">scraper</span><span class="o">.</span><span class="n">getTeamData</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">cric_data</span></div></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_csv</span><span class="p">:</span>
+            <span class="n">cric_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;extras_inn.csv&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cric_data</span></div>
+</div>
+
 </pre></div>
 
            </div>

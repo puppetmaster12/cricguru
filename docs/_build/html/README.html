@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview &mdash; Cricguru 1.3.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Overview &mdash; Cricguru 2.1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=841abef3"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Cricguru
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Cricguru
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -58,7 +63,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Overview</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/README.rst.txt" rel="nofollow"> View page source</a>
@@ -70,7 +75,7 @@
            <div itemprop="articleBody">
              
   <section id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h1>
 <p>Cricguru is a data extraction module for extracting data from the
 Statsguru data query on Cricinfo. I was inspired to build a simple tool
 to extract dataframes from statsguru for analyzing cricket data and was
@@ -82,7 +87,7 @@ information from it. Hence this module has functions to easily get the
 cricket data we want without having to manually scrape the website. The
 data output is currently returned in the form of Pandas dataframes.</p>
 <section id="team-data">
-<h2>Team Data<a class="headerlink" href="#team-data" title="Permalink to this heading"></a></h2>
+<h2>Team Data<a class="headerlink" href="#team-data" title="Link to this heading"></a></h2>
 <p>Data by team can be obtained for the three main classes of cricket
 formats which are Test, One-day and T20. Excluding the class argument
 would return the overall data. In order to filter by teams and
@@ -95,7 +100,7 @@ Zealand“:”5“,”Pakistan“:”7“,”South Africa“:”3“,”Sri Lank
 Indies“:”4“,”Zimbabwe“:”9”}</p>
 </section>
 <section id="player-data">
-<h2>Player Data<a class="headerlink" href="#player-data" title="Permalink to this heading"></a></h2>
+<h2>Player Data<a class="headerlink" href="#player-data" title="Link to this heading"></a></h2>
 <p>Data by player can be obtained for the same classes mentioned above. The
 player class however requires a player id which can be obtained from
 Cricinfo by selecting a team followed by a player from that team. For
@@ -103,7 +108,7 @@ example Angelo Mathew’s id is 49764 which can be found appended to the
 url of the player’s stats page on Cricinfo.</p>
 </section>
 <section id="built-with">
-<h2>Built With<a class="headerlink" href="#built-with" title="Permalink to this heading"></a></h2>
+<h2>Built With<a class="headerlink" href="#built-with" title="Link to this heading"></a></h2>
 <p>This project primarily uses Python 3.8 in combination with Pandas.
 Pandas is used to get the tables directly from the Statsguru query pages
 and convert them to dataframes. Urllib is used to format the url and
@@ -111,21 +116,21 @@ append the query parameters. Poetry is used for packaging and
 publishing.</p>
 </section>
 <section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
 <p>You can install the package using the following command.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install cricguru
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cricguru
 </pre></div>
 </div>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <p>You can get overall figures for all teams with the following. You must
 pass in the query parameters in a dictionary as shown.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>from cricguru import team
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>from<span class="w"> </span>cricguru<span class="w"> </span>import<span class="w"> </span>team
 
-<span class="nv">team</span> <span class="o">=</span> team.Team<span class="o">()</span>
-<span class="nv">query_params</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;template&quot;</span>: <span class="s2">&quot;results&quot;</span><span class="o">}</span>
-<span class="nv">cric_data</span> <span class="o">=</span> team.overall<span class="o">(</span>query_params<span class="o">)</span>
+<span class="nv">team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>team.Team<span class="o">()</span>
+<span class="nv">query_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;template&quot;</span>:<span class="w"> </span><span class="s2">&quot;results&quot;</span><span class="o">}</span>
+<span class="nv">cric_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>team.overall<span class="o">(</span>query_params<span class="o">)</span>
 
 <span class="c1">#Returns a pandas dataframe</span>
 cric_data.head<span class="o">()</span>
@@ -135,42 +140,42 @@ cric_data.head<span class="o">()</span>
 player object and then call the function for the type of data you
 require. You have to specify what type of player data you need such as
 allround, batting or bowling.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>from cricguru import player
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>from<span class="w"> </span>cricguru<span class="w"> </span>import<span class="w"> </span>player
 
-<span class="nv">player</span> <span class="o">=</span> player.Player<span class="o">(</span><span class="m">49764</span><span class="o">)</span>
-<span class="nv">query_params</span> <span class="o">=</span> <span class="o">{</span>
-    <span class="s1">&#39;class&#39;</span> : <span class="s1">&#39;1&#39;</span>,
-    <span class="s1">&#39;type&#39;</span> : <span class="s1">&#39;allround&#39;</span>
+<span class="nv">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>player.Player<span class="o">(</span><span class="m">49764</span><span class="o">)</span>
+<span class="nv">query_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s1">&#39;class&#39;</span><span class="w"> </span>:<span class="w"> </span><span class="s1">&#39;1&#39;</span>,
+<span class="w">    </span><span class="s1">&#39;type&#39;</span><span class="w"> </span>:<span class="w"> </span><span class="s1">&#39;allround&#39;</span>
 <span class="o">}</span>
 
-<span class="nv">cric_data</span> <span class="o">=</span> player.career_summary<span class="o">(</span>query_params<span class="o">)</span>
+<span class="nv">cric_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>player.career_summary<span class="o">(</span>query_params<span class="o">)</span>
 print<span class="o">(</span>cric_data.head<span class="o">())</span>
 </pre></div>
 </div>
 </section>
 <section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading"></a></h2>
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h2>
 <p>This is an amateur project at best and I am still a complete beginner to
 Python and would greatly welcome any suggestions, advice, constructive
 criticism, best practices or contributions to the project. Simply open a
 pull request or issue and I will check it out.</p>
 </section>
 <section id="contact">
-<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this heading"></a></h2>
+<h2>Contact<a class="headerlink" href="#contact" title="Link to this heading"></a></h2>
 <p>You can also contact me at <a class="reference external" href="mailto:pavithranthilakanathan&#37;&#52;&#48;gmail&#46;com">pavithranthilakanathan<span>&#64;</span>gmail<span>&#46;</span>com</a> or on
 twitter - &#64;pavin_v1</p>
 </section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h2>
+<h2>License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
 <p>Distributed under the MIT license. See `LICENSE.md’ for more
 information.</p>
 </section>
 <section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading"></a></h2>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading"></a></h2>
 <ul><li><p>ESPN Cricinfo</p>
 </li></ul></section>
 <section id="todo">
-<h2>Todo<a class="headerlink" href="#todo" title="Permalink to this heading"></a></h2>
+<h2>Todo<a class="headerlink" href="#todo" title="Link to this heading"></a></h2>
 <ul><li><p>100% code coverage</p>
 </li><li><p>Additional data formats</p>
 </li></ul></section>
