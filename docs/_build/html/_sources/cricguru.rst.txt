@@ -4,10 +4,9 @@ API
 cricguru.player
 ---------------
 
-.. automodule:: cricguru.player
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. code-block:: rst
+   career_summary(query_params)
+   # Returns the career summary stats of the player.
 
 cricguru.team
 -------------
