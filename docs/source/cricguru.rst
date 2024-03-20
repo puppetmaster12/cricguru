@@ -4,7 +4,7 @@ API
 cricguru.player
 ---------------
 
-.. code-block:: python
+.. code-block:: rst
    career_summary(query_params)
    # Returns the career summary stats of the player.
 
